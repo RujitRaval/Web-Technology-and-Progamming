@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+<script type="text/javascript">
+function FormValidator() {
+    var name = document.forms["myForm"]["txt1"].value;
+	var cno = document.forms["myForm"]["txt2"].value;
+	var mail = document.forms["myForm"]["txt3"].value;
+	var format1=/^[0-9]+$/;
+	var format2=/^[a-zA-Z]+$/;
+	var atpos=mail.indexOf("@");
+	var dotpos=mail.indexOf(".");
+    if (name == "") {
+        alert("Name must be filled.");
+    }
+	else if (cno == "") {
+        alert("Contact No must be filled.");
+    }
+	else if (mail == "") {
+        alert("Mail must be filled.");
+    }
+	else if (!cno.value.match(format1)) {
+        alert("Contact No must be numeric.");
+    }
+	else if (!name.value.match(format2)) {
+        alert("Name must be alphabatic.");
+    }
+	else if(atpos<1 || (dotpos-atpos<2)){
+		alert("Email Id must be proper.");
+	}
+	else{
+		alert("All Good !!");	
+	}
+}
+
+</script>
+</head>
+
+<body>
+<form name="myForm" onsubmit="return FormValidator()" method="post">
+<table width="444" border="1" cellspacing="6" cellpadding="6">
+  <tr>
+    <th width="120" scope="row"><div align="right">Name:</div></th>
+    <td width="276"><label for="txt1"></label>
+    <input type="text" name="txt1" id="txt1" /></td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="right">Contact No:</div></th>
+    <td><input type="text" name="txt2" id="txt2" /></td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="right">Email ID:</div></th>
+    <td><input type="text" name="txt3" id="txt3" /></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><div align="center">
+      <input type="submit" name="submit" id="submit" value="Submit" />
+    </div></th>
+  </tr>
+</table>
+</form>
+
+
+</body>
+</html>

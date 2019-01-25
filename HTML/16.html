@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Calculator</title>
+
+</head>
+
+<body>
+<form name="myForm" action="" method="post">
+  <table width="352" border="1" cellspacing="6" cellpadding="6">
+    <tr>
+      <td width="145"><div align="center">Value 1</div>
+        
+        <div align="center">
+          <input type="text" name="txt1" id="txt1" />
+      </div></td>
+      <td width="145"><div align="center">Value 2
+      </div>
+        
+        <div align="center">
+          <input type="text" name="txt2" id="txt2" />
+        </div></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" value="ADDITION" name="btn1" onclick="add()" style="width:300px; height:30px" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" value="SUBTRACTION" name="btn2" onclick="sub()" style="width:300px; height:30px" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" value="MULTIPLICATION" name="btn3" onclick="mul()" style="width:300px; height:30px" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" value="DIVISION" name="btn4" onclick="div()" style="width:300px; height:30px" /></td>
+    </tr>
+  </table>
+</form>
+
+<script type="text/javascript">
+	var val1 = txt1.myForm.value;
+	var val2 = document.forms["myForm"]["txt2"].value;
+
+	function add()
+	{
+		val3=val1+ val2;
+		alert(val3);
+	}
+	function sub()
+	{
+		val3=val1- val2;
+		alert(val3);
+	}
+	function mul()
+	{
+		val3=val1* val2;
+		alert(val3);
+	}
+	function div()
+	{
+		val3=val1/ val2;
+		alert(val3);
+	}
+</script>
+</body>
+</html>
